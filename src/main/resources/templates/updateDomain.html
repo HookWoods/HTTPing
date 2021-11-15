@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Domain</title>
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+          crossorigin="anonymous"/>
+</head>
+<body>
+<div class="container">
+
+    <h3>Update Domain</h3>
+    <hr/>
+
+    <form action="#" th:action="@{/updateDomain}" th:object="${website}" method="post">
+        <input type="text" th:field="*{name}" th:value="${website.name}" class="form-control col-4 mb-4" readonly/>
+
+        <input type="text" th:field="*{url}" class="form-control col-4 mb-4" th:value="${website.url}"/>
+
+        <button type="submit" class="btn btn-primary col-2">Save</button>
+    </form>
+    <hr/>
+    <a th:href="@{/}">Back to list</a>
+</div>
+</body>
+</html>
